@@ -3,8 +3,6 @@ import { RiAdminLine } from 'react-icons/ri';
 import styles from './styles.module.scss';
 
 export function SidebarMenu() {
-  const name = 'Pedro';
-
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebar__logo}>
