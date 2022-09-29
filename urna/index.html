@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Urna Eletrônica</title>
     <link rel="stylesheet" href="style.css" />
+    
   </head>
   <body>
     <div class="tudo">
@@ -64,10 +65,13 @@
           <div class="teclado-linha">
             <div class="teclado-botao botao-branco">BRANCO</div>
             <div class="teclado-botao botao-corrige">CORRIGE</div>
-            <div class="teclado-botao botao-confirma">CONFIRMA</div>
+            <div class="teclado-botao botao-confirma" id="botao-confirma-som">CONFIRMA</div>
+            <audio id="confirma-som" src="./assets/audios/som-confirma.mp3"></audio>
           </div>
         </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
