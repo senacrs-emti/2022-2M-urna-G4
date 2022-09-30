@@ -65,8 +65,8 @@
 
           <div class="teclado-linha">
             <div class="teclado-botao botao-branco" onclick="branco()">BRANCO</div>
-            <div class="teclado-botao botao-corrige">CORRIGE</div>
-            <div class="teclado-botao botao-confirma" id="botao-confirma-som">CONFIRMA</div>
+            <div class="teclado-botao botao-corrige" onclick="corrige()">CORRIGE</div>
+            <div class="teclado-botao botao-confirma" id="botao-confirma-som" onclick='confirma()'>CONFIRMA</div>
             <audio id="confirma-som" src="./assets/audios/som-confirma.mp3"></audio>
           </div>
         </div>

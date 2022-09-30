@@ -38,5 +38,18 @@ function branco() {
 }
 
 function corrige() {
-  const corrige = document.querySelector('.botao-corrige');
+  const primeiroInput = document.querySelector('#primeiroInput');
+  const segundoInput = document.querySelector('#segundoInput');
+
+  if ((segundoInput === '0', '9')) {
+    document.getElementById('segundoInput').innerHTML = '';
+    document.getElementById('primeiroInput').innerHTML = '';
+    primeiroInput.classList.add('pisca');
+  }
 }
+
+// function getRandomInt(max) {
+//   return Math.floor(Math.random() * max);
+// }
+
+// const apagar = getRandomInt(10);
