@@ -14,7 +14,7 @@
           <div class="d-1">
             <div class="d-1-left">
               <div class="d-1-1">
-                <span class='titulo texto'>SEU VOTO PARA</span>
+                <span class='titulo textoBranco'>SEU VOTO PARA</span>
               </div>
               <div class="d-1-2">
                 <span class="vereador">VEREADOR</span>
