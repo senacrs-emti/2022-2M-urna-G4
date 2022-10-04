@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    />
+    <link rel="stylesheet" href="./main.css" />
+    <title>Apuração</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./assets/Senac_logo.png" />
+            <h2>Senac <span class="danger">RS</span></h2>
+            <div class="close" id="close-btn">
+              <span class="material-icons-sharp">close</span>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="#">
+            <span class="material-icons-sharp">person_outline</span>
+            <h3>Sua conta</h3>
+          </a>
+          <a href="#" class="active">
+            <span class="material-icons-sharp">analytics</span>
+            <h3>Apuração</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">mail_outline</span>
+            <h3>Mensagens</h3>
+            <span class="message-count">20</span>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">settings</span>
+            <h3>Configurações</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+      <main>
+        <h1>Apuração</h1>
+        <div class="state-selection">
+          <input list="states" />
+            <datalist id="states">
+              <option value="BR - Brasil">
+              <option value="AC - Acre">
+              <option value="AL - Alagoas">
+              <option value="AP - Amapá">
+              <option value="AM - Amazonas">
+              <option value="BH - Bahia">
+              <option value="CE - Ceará">
+              <option value="DF - Distrito Federal">
+              <option value="ES - Espiríto Santo">
+              <option value="GO - Goiás">
+              <option value="MA - Maranhão">
+              <option value="MT - Mato Grosso">
+              <option value="MS - Mato Grosso do Sul">
+              <option value="MG - Minas Gerais">
+              <option value="PR - Paraná">
+              <option value="PB - Paraíba">
+              <option value="PA - Pará">
+              <option value="PE - Pernambuco">
+              <option value="PI - Piauí">
+              <option value="RJ - Rio de Janeiro">
+              <option value="RN - Rio Grande do Norte">
+              <option value="RS - Rio Grande do Sul">
+              <option value="RO - Rondônia">
+              <option value="RR - Roraima">
+              <option value="SC - Santa Catarina">
+              <option value="SE - Sergipe">
+              <option value="SP - São Paulo">
+              <option value="TO - Tocantins">
+              <option value="ZZ - Exterior">
+            </datalist>
+        </div>
+        <div class="insights">
+          <!-- Graph 1 -->
+          <div class="graph-data-1">
+            <span class="material-icons-sharp">analytics</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Total graph</h3>
+                <h1>1390 Votos</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="40" cy="40" r="30"></circle>
+                </svg>
+                <div class="number">
+                  <p>81%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Ultimas 24 Horas</small>
+          </div>
+          <!-- Graph 2 -->
+          <div class="graph-data-2">
+            <span class="material-icons-sharp">analytics</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Total graph</h3>
+                <h1>1390 Votos</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="40" cy="40" r="30"></circle>
+                </svg>
+                <div class="number">
+                  <p>62%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Atualizado 3 minutos atras</small>
+          </div>
+          <!-- Graph 3 -->
+          <div class="graph-data-3">
+            <span class="material-icons-sharp">analytics</span>
+            <div class="middle">
+              <div class="left">
+                <h3>Urnas Apuradas</h3>
+                <h1>135000 Votos</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="40" cy="40" r="30"></circle>
+                </svg>
+                <div class="number">
+                  <p>44%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Atualizado 32 segundos atras</small>
+          </div>
+        </div>
+        <div class="recent-info">
+          <h2>Recent info</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Numero</th>
+                <th>Cargo</th>
+                <th>Partido</th>
+                <th>Quant. Votos</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </main>
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp">menu</span>
+          </button>
+          <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>Hey <b>Joao</b></p>
+              <small class="text-muted">Admin</small>
+            </div>
+            <div class="profile-photo">
+              <img src="" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="recent-updates">
+          <h2>Noticias Recentes</h2>
+          <div class="updates">
+            <div class="update">
+              <div class="profile-photo">
+                <img src="" alt="" />
+              </div>
+              <div class="message">
+                <p><b>Joao do PT</b> deu pra krl</p>
+                <small class="text-muted">3 min ago</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="" alt="" />
+              </div>
+              <div class="message">
+                <p><b>Joao do PT</b> deu pra krl</p>
+                <small class="text-muted">3 min ago</small>
+              </div>
+            </div>
+            <div class="update">
+              <div class="profile-photo">
+                <img src="" alt="" />
+              </div>
+              <div class="message">
+                <p><b>Joao do PT</b> deu pra krl</p>
+                <small class="text-muted">3 min ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="analytics">
+          <div class="item online">
+            <div class="icon">
+              <span class="material-icons-sharp">insights</span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>TOTAL VOTES</h3>
+                <small class="text-muted">Last Hour</small>
+              </div>
+              <h5 class="success">+39%</h5>
+              <h3>12300</h3>
+            </div>
+          </div>
+          <div class="item online">
+            <div class="icon">
+              <span class="material-icons-sharp">insights</span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>TOTAL VOTES</h3>
+                <small class="text-muted">Last Hour</small>
+              </div>
+              <h5 class="danger">-42%</h5>
+              <h3>3451</h3>
+            </div>
+          </div>
+          <div class="item online">
+            <div class="icon">
+              <span class="material-icons-sharp">insights</span>
+            </div>
+            <div class="right">
+              <div class="info">
+                <h3>TOTAL VOTES</h3>
+                <small class="text-muted">Last Hour</small>
+              </div>
+              <h5 class="success">+39%</h5>
+              <h3>12300</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./politics.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
