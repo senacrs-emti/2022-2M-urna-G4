@@ -25,13 +25,13 @@
                 <div class="numero" id="segundoInput"></div>
                 
               </div>
-              <div class="d-1-4">
+              <div class="d-1-4" style = 'display:none;'>
                 Nome: Fulano <br />
                 Partido: P <br />
                 Vice: Beltrano <br />
               </div>
             </div>
-            <div class="d-1-right">
+            <div class="d-1-right" style='display: none;'>
               <img src="./assets/img/modelo.png" alt="bolsonaro">
             </div>
           </div>

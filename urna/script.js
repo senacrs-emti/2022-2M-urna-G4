@@ -27,11 +27,11 @@ function branco() {
   const d13Branco = document.querySelector(".d-1-3");
   const d14Branco = document.querySelector(".d-1-4");
 
-  d14Branco.remove("d14Branco");
-  vereadorBranco.remove("vereadorBranco");
-  divDireitaBranco.remove("divDireitaBranco");
   d13Branco.remove("d13Branco");
-  
+  vereadorBranco.remove("vereadorBranco");
+  d14Branco.remove("d14Branco");
+  divDireitaBranco.remove("divDireitaBranco");
+
 }
 
 function corrige() {
@@ -40,17 +40,26 @@ function corrige() {
 
 function escolhaENula(number) {
   const divDireita = document.querySelector(".d-1-right");
+  const name = document.querySelector('.d-1-4');
  
   if (number == 72) {
     divDireita.remove("divDireita");
     document.querySelector(".d-1-4").innerHTML = "VOTO NULO";
+    name.style.display == 'none' ? name.style.display = 'flex' : name.style.display = 'none';
+    return;
   }
+
+  const right = document.querySelector('.d-1-right');
+  right.style.display == 'none' ? right.style.display = 'flex' : right.style.display = 'none';
+  name.style.display == 'none' ? name.style.display = 'flex' : name.style.display = 'none';
+
 }
+
 
 const button = document.querySelector("#botao-confirma-som");
 button.addEventListener("click", function () {
-const audio = document.querySelector("#confirma-som");
-audio.play();
+  const audio = document.querySelector("#confirma-som");
+  audio.play();
 });
 
 
