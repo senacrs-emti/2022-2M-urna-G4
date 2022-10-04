@@ -71,9 +71,7 @@ body {
 }
 
 
-.d-1-3 {
-  height: 50px;
-}
+
 
 .numero {
   display: inline-block;
@@ -83,12 +81,6 @@ body {
   text-align: center;
   line-height: 40px;
   font-size: 25px;
-}
-
-.pisca {
-  animation-name: pisca;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
 }
 
 
@@ -175,9 +167,39 @@ body {
   margin-left: 50px;
 }
 
-.botao-bateria:active{
+
+
+ .bola1{
+ width: 15%;
+ height: 10px;
+ background-color: red;
+ border-radius: 10rem;
+ display: inline-block;
+ }
+
+ .bola1:active{
   background-color: #df1515;
-}
+ }
+
+ .bola2 {
+  width: 15%;
+  height: 10px;
+  background-color:yellow;
+  border-radius: 10rem;
+  display: inline-block;
+  }
+
+  .bola3 {
+  width: 15%;
+  height: 10px;
+  background-color:rgb(34, 126, 34);
+  border-radius: 10rem;
+  display: inline-block;
+    }
+  
+
+
+
 
 .tela{
   width: 512px;
@@ -185,7 +207,7 @@ body {
   background-color:#a5a3a3 ;
   display: flex;
   margin: 0 auto 0px auto;
-  margin-left:399px ;
+  margin-left:442px ;
  
 
 }
