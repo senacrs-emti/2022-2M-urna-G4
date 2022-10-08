@@ -11,5 +11,7 @@
     </ul>
   </nav>
 
-  <button><i class='fas fa-user'></i> Desconectar-se</button>
+  <form action="/admin/controllers/LogoutController.php" method="POST">
+    <button type="submit"><i class='fas fa-user'></i> Desconectar-se</button>
+  </form>
 </header>
