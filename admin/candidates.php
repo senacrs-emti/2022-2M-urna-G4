@@ -6,7 +6,6 @@ include('controllers/AuthController.php');
 require_once('controllers/DatabaseController.php');
 
 $db = new Database();
-
 $query = $db->query('
   SELECT candidates.name, candidates.number, parties.website_url as party_url, parties.name as party_name
   FROM candidates
@@ -16,9 +15,13 @@ $query = $db->query('
 ');
 ?>
 
+<section class='mainContainer'>
+  <div class='actions'>
 
-<section class='main'>
-  <button class='new'>Adicionar registro</button>
+    <a class='new' href="actions.php?type=new&scope=candidates">Adicionar</a>
+    <button class='edit'>Editar</button>
+
+  </div>
   <table>
     <thead>
       <th>Nome</th>

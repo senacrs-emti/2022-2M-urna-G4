@@ -6,16 +6,14 @@ include('controllers/AuthController.php');
 require_once('controllers/DatabaseController.php');
 
 $db = new Database();
-
-$query = $db->query('
-  SELECT `id`, `username`, `is_admin` as isAdmin
-  FROM users
-');
+$query = $db->query('SELECT id, username, is_admin as isAdmin FROM users');
 ?>
 
-
-<section class='main'>
-  <button class='new'>Adicionar registro</button>
+<section class='mainContainer'>
+  <div class='actions'>
+    <button class='new'>Adicionar</button>
+    <button class='edit'>Editar</button>
+  </div>
   <table>
     <thead>
       <th>#</th>

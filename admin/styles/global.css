@@ -14,7 +14,7 @@ body {
   color: white;
 }
 
-.main {
+.mainContainer {
   flex: 1;
   overflow: auto;
   margin-top: 2rem;
@@ -25,11 +25,14 @@ body {
   align-items: center;
 }
 
-.main .new {
+.actions {
+  display: flex;
+  align-self: flex-end;
+}
+
+.mainContainer .actions button, .mainContainer .actions a {
   margin-right: 3rem;
   margin-bottom: 1rem;
-
-  align-self: flex-end;
 
   padding: 1rem;
   text-transform: uppercase;
@@ -39,17 +42,23 @@ body {
   border-radius: 4px;
 
   color: white;
+  font-size: 0.8rem;
   font-weight: 800;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.main table {
+.mainContainer .edit {
+  background: #EB8A1D !important;
+}
+
+.mainContainer table {
   width: 95%;
   border-collapse: collapse;
   min-width: 600px;
 }
 
-.main table th {
+.mainContainer table th {
   background: #32323238;
   padding: 1rem;
   text-align: left;
@@ -59,17 +68,17 @@ body {
   line-height: 1.6rem;
 }
 
-.main table th:first-child {
+.mainContainer table th:first-child {
   border-top-left-radius: 8px;
   padding-left: 1.5rem;
 }
 
-.main table th:last-child {
+.mainContainer table th:last-child {
   border-top-right-radius: 8px;
   padding-right: 1.5rem;
 }
 
-.main table td {
+.mainContainer table td {
   background: #29292E;
   border-top: 4px solid #202024;
   padding: 1rem;
@@ -78,17 +87,17 @@ body {
   line-height: 1.6rem;
 }
 
-.main table td a {
+.mainContainer table td a {
   color: #8257E5;
   text-decoration: none;
 }
 
-.main table td a:hover {
+.mainContainer table td a:hover {
   text-decoration: underline;
   font-weight: bold;
 }
 
-.main table td button {
+.mainContainer table td button {
   cursor: pointer;
 
   background: transparent;
@@ -99,11 +108,11 @@ body {
   line-height: 1.6rem;
 }
 
-.main table td:first-child {
+.mainContainer table td:first-child {
   width: 50%;
   padding-left: 1.5rem;
 }
 
-.main table td:last-child {
+.mainContainer table td:last-child {
   padding-right: 1.5rem;
 }

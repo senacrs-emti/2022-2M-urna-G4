@@ -6,16 +6,14 @@ include('controllers/AuthController.php');
 require_once('controllers/DatabaseController.php');
 
 $db = new Database();
-
-$query = $db->query('
-  SELECT parties.id, parties.name, parties.website_url
-  FROM parties
-');
+$query = $db->query('SELECT parties.id, parties.name, parties.website_url FROM parties ORDER BY parties.id ASC');
 ?>
 
-
-<section class='main'>
-  <button class='new'>Adicionar registro</button>
+<section class='mainContainer'>
+  <div class='actions'>
+    <button class='new'>Adicionar</button>
+    <button class='edit'>Editar</button>
+  </div>
   <table>
     <thead>
       <th>#</th>
