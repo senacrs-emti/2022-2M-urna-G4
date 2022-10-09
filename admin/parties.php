@@ -8,11 +8,8 @@ require_once('controllers/DatabaseController.php');
 $db = new Database();
 
 $query = $db->query('
-  SELECT candidates.name, candidates.number, parties.website_url as party_url, parties.name as party_name
-  FROM candidates
-  INNER JOIN parties
-  ON candidates.party_id = parties.id
-  ORDER BY candidates.number ASC
+  SELECT parties.id, parties.name, parties.website_url
+  FROM parties
 ');
 ?>
 
@@ -21,23 +18,25 @@ $query = $db->query('
   <button class='new'>Adicionar registro</button>
   <table>
     <thead>
+      <th>#</th>
       <th>Nome</th>
-      <th>Número</th>
-      <th>Partido</th>
+      <th>Número de candidatos</th>
+      <th>Web site</th>
       <th>Ações</th>
     </thead>
     <tbody>
       <?php
         foreach ($query as $key => $value) {
+          $id = $value->id;
           $name = $value->name;
-          $number = $value->number;
-          $party = $value->party_name;
-          $party_url = $value->party_url;
+          $website_url = $value->website_url;
+          $candidates = $db->singleQuery('SELECT COUNT(id) as count FROM candidates WHERE party_id = :party_id', ['party_id' => $value->id]);
 
           echo "<tr>
+            <td>$id</td>
             <td>$name</td>
-            <td>$number</td>
-            <td>$party</td>
+            <td>$candidates->count</td>
+            <td><a href='$website_url'>$website_url</a></td>
             <td>
               <button>
                 Deletar

@@ -8,11 +8,8 @@ require_once('controllers/DatabaseController.php');
 $db = new Database();
 
 $query = $db->query('
-  SELECT candidates.name, candidates.number, parties.website_url as party_url, parties.name as party_name
-  FROM candidates
-  INNER JOIN parties
-  ON candidates.party_id = parties.id
-  ORDER BY candidates.number ASC
+  SELECT `id`, `username`, `is_admin` as isAdmin
+  FROM users
 ');
 ?>
 
@@ -21,23 +18,22 @@ $query = $db->query('
   <button class='new'>Adicionar registro</button>
   <table>
     <thead>
+      <th>#</th>
       <th>Nome</th>
-      <th>Número</th>
-      <th>Partido</th>
+      <th>Administrador</th>
       <th>Ações</th>
     </thead>
     <tbody>
       <?php
         foreach ($query as $key => $value) {
-          $name = $value->name;
-          $number = $value->number;
-          $party = $value->party_name;
-          $party_url = $value->party_url;
+          $id = $value->id;
+          $username = $value->username;
+          $isAdmin = $value->isAdmin ? 'Sim' : 'Não';
 
           echo "<tr>
-            <td>$name</td>
-            <td>$number</td>
-            <td>$party</td>
+            <td>$id</td>
+            <td>$username</td>
+            <td>$isAdmin</td>
             <td>
               <button>
                 Deletar

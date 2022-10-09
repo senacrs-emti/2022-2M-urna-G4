@@ -6,8 +6,8 @@
     <ul>
       <li><a href="index.php">Home</a></li>
       <li><a href="candidates.php">Candidatos</a></li>
-      <li><a href="index.php">Partidos</a></li>
-      <li><a href="index.php">Admins</a></li>
+      <li><a href="parties.php">Partidos</a></li>
+      <li><a href="admins.php">Admins</a></li>
     </ul>
   </nav>
 
