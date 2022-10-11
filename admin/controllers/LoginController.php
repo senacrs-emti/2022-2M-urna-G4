@@ -17,7 +17,7 @@ handleLogin($_POST['username'], $_POST['password']);
 
 function handleLogin($username, $password) {
   $db = new Database();
-  $query = $db->singleQuery('SELECT `id`, `username`, `password`, `is_admin` as isAdmin FROM users WHERE username = :username', compact('username'));
+  $query = $db->singleQuery('SELECT `id`, `username`, `password`, `is_admin` as isAdmin FROM users WHERE username = :username AND is_deleted = false', compact('username'));
 
   if (!$query) {
     header('location: /admin/login.php');

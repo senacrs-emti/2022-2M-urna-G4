@@ -2,7 +2,8 @@ CREATE TABLE users (
   `id` INTEGER PRIMARY KEY AUTO_INCREMENT, 
   `username` VARCHAR(255), 
   `password` VARCHAR(255),
-  `is_admin` BOOLEAN DEFAULT 0
+  `is_admin` BOOLEAN DEFAULT 0,
+  `is_deleted` BOOLEAN DEFAULT 0
 );
 
 CREATE TABLE parties (
