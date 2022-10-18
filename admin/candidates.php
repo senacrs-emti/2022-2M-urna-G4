@@ -8,7 +8,7 @@ require_once('controllers/DatabaseController.php');
 $db = new Database();
 $query = $db->query('
   SELECT 
-    candidates.name, candidates.number, parties.website_url as party_url, parties.name as party_name, roles.name as role_name
+    candidates.name, candidates.display_name, candidates.number, parties.website_url as party_url, parties.name as party_name, roles.name as role_name
   FROM candidates
   INNER JOIN parties
   ON candidates.party_id = parties.id
@@ -28,7 +28,8 @@ $query = $db->query('
   
   <table>
     <thead>
-      <th>Nome</th>
+      <th>Nome completo</th>
+      <th>Nome na urna</th>
       <th>Cargo</th>
       <th>Número</th>
       <th>Partido</th>
@@ -38,6 +39,7 @@ $query = $db->query('
       <?php
         foreach ($query as $key => $value) {
           $name = $value->name;
+          $displayName = $value->display_name;
           $role = $value->role_name;
           $number = $value->number;
           $party = $value->party_name;
@@ -45,6 +47,7 @@ $query = $db->query('
 
           echo "<tr>
             <td>$name</td>
+            <td>$displayName</td>
             <td>$role</td>
             <td>$number</td>
             <td>$party</td>
