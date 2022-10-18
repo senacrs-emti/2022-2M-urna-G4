@@ -28,6 +28,7 @@ class Database {
     }
 
     public function singleQuery(string $sql, $params = []) {
-        return $this->query($sql, $params)[0];
+        $query = $this->query($sql, $params);
+        return $query[0] ?? null;
     }
 }

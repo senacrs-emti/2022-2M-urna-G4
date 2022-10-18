@@ -44,3 +44,8 @@ CREATE TABLE votes (
   `candidate_id` INTEGER
   foreign key (candidate_id) references candidates (id)
 );
+
+CREATE TABLE voting (
+  `citizen_id` INTEGER,
+  foreign key (citizen_id) references citizens (id)
+);
