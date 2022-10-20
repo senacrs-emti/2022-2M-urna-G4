@@ -34,8 +34,11 @@ CREATE TABLE citizens (
   `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
   `voter_document` VARCHAR(255) UNIQUE,
   `name` VARCHAR(255),
+  `zone` VARCHAR(50),
+  `section` VARCHAR(50),
+  `state` VARCHAR(50),
   `has_voted` BOOLEAN DEFAULT 0,
-  `is_died` BOOLEAN DEFAULT 0
+  `is_died` BOOLEAN DEFAULT 0,
   `is_canceled` BOOLEAN DEFAULT 0
 );
 
