@@ -21,6 +21,7 @@ include('controllers/AuthController.php');
       res = await $.post('../controller/index.php', {
         scope: 'origin-mesario',
         args: {
+          election_id: 1,
           voter_document: '123456'
         }
       });
@@ -28,6 +29,7 @@ include('controllers/AuthController.php');
       res = await $.post('../controller/index.php', {
         scope: 'origin-vote',
         args: {
+          election_id: 1,
           votes: [12, 13, 22]
         }
       });
