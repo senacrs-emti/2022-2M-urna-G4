@@ -11,22 +11,27 @@ include('controllers/AuthController.php');
   <p>Seja bem vindo ao painel do TSE para as eleições do SenacRS.</p>
 </div>
 
-<button onclick="handleTest()">Oi</button>
+<button onclick="handleTest(1)">Liberar eleitor</button>
+<button onclick="handleTest(2)">Votar</button>
 
 <script>
-  async function handleTest() {
-    // let res = await $.post('../controller/index.php', {
-    //   scope: 'origin-mesario',
-    //   args: {
-    //     voter_document: '123456'
-    //   }
-    // });
-    let res = await $.post('../controller/index.php', {
-      scope: 'origin-vote',
-      args: {
-        votes: [12, 13, 22]
-      }
-    });
+  async function handleTest(t) {
+    let res;
+    if (t == 1) {
+      res = await $.post('../controller/index.php', {
+        scope: 'origin-mesario',
+        args: {
+          voter_document: '123456'
+        }
+      });
+    } else {
+      res = await $.post('../controller/index.php', {
+        scope: 'origin-vote',
+        args: {
+          votes: [12, 13, 22]
+        }
+      });
+    }
     // res = JSON.parse(res);
 
     console.log(res);
