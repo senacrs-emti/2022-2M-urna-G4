@@ -13,6 +13,7 @@ include('controllers/AuthController.php');
 
 <button onclick="handleTest(1)">Liberar eleitor</button>
 <button onclick="handleTest(2)">Votar</button>
+<button onclick="handleTest(3)">Criar CSV</button>
 
 <script>
   async function handleTest(t) {
@@ -25,12 +26,19 @@ include('controllers/AuthController.php');
           voter_document: '123456'
         }
       });
-    } else {
+    } else if (t == 2) {
       res = await $.post('../controller/index.php', {
         scope: 'origin-vote',
         args: {
           election_id: 1,
           votes: [12, 13, 22]
+        }
+      });
+    } else if (t == 3) {
+      res = await $.post('../controller/index.php', {
+        scope: 'create-csv',
+        args: {
+          a: 1,
         }
       });
     }

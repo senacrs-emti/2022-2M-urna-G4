@@ -18,6 +18,10 @@ switch ($scope) {
   case 'origin-vote':
     echo vote($args);
     break;
+
+  case 'create-csv':
+    echo createCSV();
+    break;
 }
 
 function mesario($args) {
@@ -90,4 +94,27 @@ function vote($args) {
   $db->query('DELETE FROM `voting`');
   
   return "O eleitor $voterQuery->name ($voterQuery->voter_document) votou.";
+}
+
+function createCSV() {
+  $citizenId = 1;
+  $votes = array('1', '123', '1234', '1234');
+
+  $temporarySerializedVotes = "";
+  foreach ($votes as $value) {
+    $temporarySerializedVotes = $temporarySerializedVotes . $value . ';';
+  }
+  $serializedVotes = array($temporarySerializedVotes);
+
+  $fileName = sha1($citizenId)."-".date('YmdHis')."-".rand(0, 99999).'.txt';
+
+  $file = fopen("./files/$fileName", 'w');
+  foreach ($serializedVotes as $line) {
+    $vote = explode(";", base64_encode($line));
+    fputcsv($file, $vote);
+  }
+  
+  fclose($file);
+
+  return $fileName;
 }
