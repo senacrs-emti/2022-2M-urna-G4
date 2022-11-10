@@ -1,0 +1,2 @@
+https://medium.com/mestredev/leitura-de-arquivos-csv-com-php-33819d78d03b
+https://dev.to/phpwomenbr/manipulacao-de-arquivos-csv-no-php-5eeg
