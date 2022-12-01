@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { NumericRoleToText, Role } from 'src/types/roles';
 import Keyboard from './components/Keyboard';
 import Screen from './components/Screen';
@@ -32,6 +32,10 @@ export default function Urna() {
       console.log('cabou');
     }
   };
+
+  useEffect(() => {
+    console.log(votes);
+  }, [votes]);
 
   return (
     <BodyContainer>

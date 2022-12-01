@@ -1,7 +1,7 @@
 import { BallotBoxContext } from '@pages/urna';
 import { useContext, useEffect } from 'react';
 import { CandidatesMock } from 'src/mocks/urna';
-import { RoleToText, RoleVoteSlots } from 'src/types/roles';
+import { Role, RoleToText, RoleVoteSlots } from 'src/types/roles';
 import {
   ScreenContainer,
   VoteDescription,
@@ -17,9 +17,12 @@ export default function Screen() {
   const { screen, role, candidateNumber, candidateProps, setCandidateProps } =
     useContext(BallotBoxContext);
 
-  const fetchCandidateByNumber = async (candidateNumber: number) => {
+  const fetchCandidateByNumberAndRole = async (
+    candidateNumber: number,
+    role: Role
+  ) => {
     CandidatesMock.forEach((candidate) => {
-      if (candidate.number == candidateNumber) {
+      if (candidate.number == candidateNumber && candidate.role == role) {
         setCandidateProps(candidate);
       }
     });
@@ -28,7 +31,7 @@ export default function Screen() {
   useEffect(() => {
     const candidateNumberInString: string = candidateNumber.join('');
     if (candidateNumberInString.length === RoleVoteSlots[role]) {
-      fetchCandidateByNumber(Number(candidateNumberInString));
+      fetchCandidateByNumberAndRole(Number(candidateNumberInString), role);
     }
   }, [candidateNumber]);
 
