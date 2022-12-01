@@ -1,6 +1,7 @@
 // needs to be the first import
 import 'reflect-metadata';
 
+import '@shared/container';
 import 'dotenv/config';
 import { app } from './app';
 

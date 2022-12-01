@@ -20,15 +20,15 @@ model Users {
 }
 
 model Citizens {
-  id            Int            @id @default(autoincrement())
-  voterDocument String         @unique
+  id            Int           @id @default(autoincrement())
+  voterDocument String        @unique
   name          String
   zone          String
   section       String
   state         String
-  isCanceled    Boolean        @default(false)
-  CitizenVotes  CitizenVotes[]
-  Voting        Voting[]
+  isCanceled    Boolean       @default(false)
+  CitizenVotes  CitizenVotes?
+  Voting        Voting?
 
   @@map("citizens")
 }
@@ -52,69 +52,60 @@ model Roles {
 }
 
 model Elections {
-  id   Int    @id @default(autoincrement())
-  name String @unique
-  tyoe String
-  year String
-
-  startsAt       DateTime         @default(now())
-  endsAt         DateTime
+  id             Int              @id @default(autoincrement())
+  name           String           @unique
+  year           String
+  type           String
+  isActive       Boolean          @default(true)
   Candidates     Candidates[]
-  ElectionsVotes ElectionsVotes[]
   CitizenVotes   CitizenVotes[]
+  ElectionsVotes ElectionsVotes[]
 
   @@map("elections")
 }
 
 model Candidates {
-  id          Int    @id @default(autoincrement())
-  name        String
-  displayName String
-  number      Int
-
-  election   Elections @relation(fields: [electionId], references: [id])
-  electionId Int
-
-  parties Parties @relation(fields: [partyId], references: [id])
-  partyId Int
-
-  Role           Roles            @relation(fields: [roleId], references: [id])
+  id             Int              @id @default(autoincrement())
+  name           String
+  displayName    String
+  number         Int
+  electionId     Int
+  partyId        Int
   roleId         Int
+  election       Elections        @relation(fields: [electionId], references: [id])
+  parties        Parties          @relation(fields: [partyId], references: [id])
+  Role           Roles            @relation(fields: [roleId], references: [id])
   ElectionsVotes ElectionsVotes[]
 
   @@map("candidates")
 }
 
 model ElectionsVotes {
-  id         Int       @id @default(autoincrement())
-  election   Elections @relation(fields: [electionId], references: [id])
-  electionId Int
-
-  candidate   Candidates @relation(fields: [candidateId], references: [id])
+  id          Int        @id @default(autoincrement())
+  electionId  Int
   candidateId Int
-
-  zone    String
-  section String
-  state   String
+  zone        String
+  section     String
+  state       String
+  candidate   Candidates @relation(fields: [candidateId], references: [id])
+  election    Elections  @relation(fields: [electionId], references: [id])
 
   @@map("elections_votes")
 }
 
 model CitizenVotes {
-  citizen   Citizens @relation(fields: [citizenId], references: [id])
-  citizenId Int      @unique
-
-  election   Elections @relation(fields: [electionId], references: [id])
+  citizenId  Int       @unique
   electionId Int
-
-  votedAt DateTime @default(now())
+  votedAt    DateTime  @default(now())
+  citizen    Citizens  @relation(fields: [citizenId], references: [id])
+  election   Elections @relation(fields: [electionId], references: [id])
 
   @@map("citizen_votes")
 }
 
 model Voting {
-  citizen   Citizens @relation(fields: [citizenId], references: [id])
   citizenId Int      @unique
+  citizen   Citizens @relation(fields: [citizenId], references: [id])
 
   @@map("voting")
 }
