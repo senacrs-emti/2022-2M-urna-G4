@@ -4,12 +4,12 @@ import { UpdateElectionUseCase } from './UpdateElectionUseCase';
 
 class UpdateElectionController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { electionId, data } = request.body;
-    if (!electionId || !data)
+    const { id, data } = request.body;
+    if (!id || !data)
       return response.status(400).json({ error: 'Missing data' });
 
     const updateElectionUseCase = container.resolve(UpdateElectionUseCase);
-    const election = await updateElectionUseCase.execute(electionId, data);
+    const election = await updateElectionUseCase.execute({ id, data });
 
     return response.status(201).json(election);
   }

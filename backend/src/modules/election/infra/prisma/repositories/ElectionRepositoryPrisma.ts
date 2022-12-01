@@ -5,9 +5,6 @@ import { prisma } from '@shared/infra/prisma';
 
 export class ElectionRepositoryPrisma implements IElectionRepository {
   async create(data: ICreateElectionDTO): Promise<Elections> {
-    const startsAt = new Date();
-    const endsAt = new Date(startsAt.setDate(startsAt.getDate() + 1));
-
     const election = await prisma.elections.create({
       data: {
         name: data.name,
@@ -19,13 +16,10 @@ export class ElectionRepositoryPrisma implements IElectionRepository {
     return election;
   }
 
-  async update(
-    electionId: number,
-    data: Partial<Elections>
-  ): Promise<Elections> {
+  async update(id: number, data: Partial<Elections>): Promise<Elections> {
     const election = await prisma.elections.update({
       where: {
-        id: electionId,
+        id: id,
       },
       data,
     });
